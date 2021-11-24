@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ABC228 C問題「Final Day」</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-logo"><a href = "https://rute-b.github.io/RuteChannel.github.io/">Rute Channel</a></div>
+        <div class="header-list">
+            <ul>
+                <li><a href = "https://rute-b.github.io/RuteChannel.github.io/selfs.html">自己紹介</a></li>
+                <li>ABCの戦略</li>
+                <li>過去問解説</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class = "Tytle">
+            <div class = "Problem-Tytle">
+                <p><font size = "7">「Final Day」</font><font size = "4">(ABC228 C問題)</font></p>
+            </div>
+        </div>
+        <div class = "Info">
+            <div class = "Problem-Info">
+                <p>Difficulty : 214, solved : 4442/5045</p>
+            </div>
+        </div>
+        <p><a href = "https://atcoder.jp/contests/abc228/tasks/abc228_c">問題文へのリンクはこちら</a></p>
+        <div class ="Statement">
+            <h1>問題文</h1>
+            <p>\(N\) 人の生徒が \(4\) 日間にわたる試験を受けています。</p>
+            <p>それぞれの日に行われる試験は \(300\) 点満点です。すなわち、 \(4\) 日間を通した試験の満点は \(1200\) 点です。</p>
+            <p>現在 \(3\) 日目までの試験が終わり、これから \(4\) 日目の試験が行われようとしています。 \(i(1 \le i \le N)\) 番目の生徒は \(j(1 \le j \le 3)\) 番目の試験で \(P_{i,j}\) 点獲得しました。</p>
+            <p>それぞれの生徒について、 \(4\) 日目の試験に上位 \(K\) 位に入っていることがあり得るかどうか判定して下さい。</p>
+            <p>ただし、 \(4\) 日目の試験後の生徒の順位は、その生徒よりも \(4\) 日間の合計点が高い生徒との人数に \(1\) を加えた値として定めます。</p>
+        </div>
+        <div class ="Constraints">
+        <h1>制約</h1>
+            <ul>
+                <li>\(1 \le K \le N \le 10^{5}\)</li>
+                <li>\(0 \le P_{i,j} \le 300 (1 \le i \le N, 1 \le j \le 3)\)</li>
+                <li>入力は全て整数である。</li>
+            </ul>
+        </div>
+        <div class = "Editional">
+        <h1>解説</h1>
+        <p>この問題は,各 \(i (1 \le i \le N)\) について, \(i\) 番目の生徒が \(4\) 日目の試験後に上位 \(K\) 位以内に入っているかを判定する問題です.</p>
+        <p>簡単のため, \(3\) 日目までに獲得した点数について, \(point[i](1 \le i \le N) = P_{i,1}+P_{i,2}+P_{i,3}\) と再び定義します.</p> 
+        <p>それぞれの生徒が,一番順位を上げられるケースについて考えましょう.ズバリ,<b>「各 \(i\) について,「生徒 \(i\) だけ \(300\) 点を獲得し, 残りの生徒が \(0\) 点を獲得した場合」</b>がそのケースです。</p>
+        <p>このケースについて,  <b>「生徒 \(i\) の点数に \(300\)を足したもの」が「 \(3\) 日目までに獲得した点数で上位 \(K\)番目の点数」以上であれば</b>, \(4\) 日目に上位 \(K\) 位以内に入ることができます.</p> 
+        <p>従って, \(point\) をあらかじめ降順にソートして,各 \(i (1 \le i \le N)\) について <b> \(P[K] \le (P[i]+300) \) であるかを判定すればよいです.</p>
+        <p>計算量は,ソートの部分がボトルネックとなり, \(O(NlogN)\) となります.</p>
+        <p>ソースコードは以下の通りです.</p>
+        <a href = "https://atcoder.jp/contests/abc228/submissions/27415228">ソースコード</a>
+        </div>
+    </div>
+        <div class="footer">
+        <div class="footer-list">
+            <ul>
+                <li>お問い合わせ</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
